@@ -1,0 +1,7 @@
+version: "3"
+services:
+  node:
+    container_name: node9c
+    image: node9
+    volumes:
+      - /home/mikael/dev/docker/node/app:/usr/src/app
