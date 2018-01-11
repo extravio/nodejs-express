@@ -7,12 +7,13 @@
         "start": "nodemon app.js --exec 'babel-node --presets es2015'",
         "start-old": "babel-node app.js --presets es2015",
         "lint": "eslint app.js;",
-        "wiredep": "wiredep --verbose --bowerJson /usr/src/app/bower.json --directory public/lib --src src/views/index.html --ignorePath ../../public",
+        "wiredep": "wiredep --verbose --bowerJson /usr/src/app/bower.json --directory public/lib --src src/views/index.ejs --ignorePath ../../public",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "ejs": "^2.5.7",
         "express": "^4.16.2"
     },
     "devDependencies": {
