@@ -11,6 +11,10 @@ app.get('/', async function (req, res) {
     res.send('Hello world');
 });
 
+app.get('/test', async function (req, res) {
+    res.send('Hello test');
+});
+
 app.listen(port, function () {
     console.log('Running on ' + port + '...');
 });

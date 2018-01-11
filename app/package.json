@@ -4,7 +4,10 @@
     "description": "",
     "main": "app.js",
     "scripts": {
-        "start": "babel-node app.js --presets es2015",
+        "start": "nodemon app.js --exec 'babel-node --presets es2015'",
+        "start-old": "babel-node app.js --presets es2015",
+        "lint": "eslint app.js;",
+        "wiredep": "wiredep --verbose --bowerJson /usr/src/app/bower.json --directory public/lib --src src/views/index.html --ignorePath ../../public",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
@@ -14,6 +17,13 @@
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
-        "babel-preset-es2015": "^6.24.1"
+        "babel-preset-es2015": "^6.24.1",
+        "eslint": "^4.15.0",
+        "eslint-config-airbnb": "^16.1.0",
+        "eslint-plugin-import": "^2.8.0",
+        "eslint-plugin-jsx-a11y": "^6.0.3",
+        "eslint-plugin-react": "^7.5.1",
+        "nodemon": "^1.14.11",
+        "wiredep": "^4.0.0"
     }
 }

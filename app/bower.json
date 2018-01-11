@@ -1,18 +1,32 @@
 {
-  "name": "app",
-  "description": "",
-  "main": "app.js",
-  "license": "ISC",
-  "homepage": "",
-  "ignore": [
+    "name": "app",
+    "description": "",
+    "main": "app.js",
+    "license": "ISC",
+    "homepage": "",
+    "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
   ],
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "font-awesome": "^4.7.0"
-  }
+    "dependencies": {
+        "bootstrap": "^3.3.7",
+        "font-awesome": "^4.7.0"
+    },
+    "overrides": {
+        "bootstrap": {
+            "main": [
+              "dist/js/bootstrap.min.js",
+              "dist/css/bootstrap.min.css",
+              "less/bootstrap.less"
+            ]
+        },
+        "font-awesome": {
+            "main": [
+              "css/font-awesome.min.css"
+            ]
+        }
+    }
 }

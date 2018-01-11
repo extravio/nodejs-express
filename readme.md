@@ -18,3 +18,9 @@ Install bower globally in order to use it on the command line. Due to a bug, "--
 ```> npm install bower -g```
 
 ```> bower init --allow-root```
+
+#### wiredep & nodemon
+
+Install wiredep to automatically inject bower dependencies into our index.html.
+
+Install nodemon to restart the server automatically.
