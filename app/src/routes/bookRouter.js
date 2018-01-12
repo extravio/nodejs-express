@@ -1,8 +1,8 @@
 import express from 'express';
 
-var bookRouter = express.Router();
+let bookRouter = express.Router();
 
-var books = [
+const books = [
     {
         Title: 'Title1',
         Author: 'Author1'
@@ -21,35 +21,28 @@ var books = [
     },
 ];
 
-bookRouter.route('/')
-    .get(function (req, res) {
-        res.render('bookList', {
-            title: 'Books',
-            nav: [{
-                Link: '/Books',
-                Text: 'Books'
-            }, {
-                Link: '/Authors',
-                Text: 'Authors'
-            }],
-            books
-        });
-    });
+let router = (nav) => {
 
-bookRouter.route('/:id')
-    .get(function (req, res) {
-        var id = req.params.id;
-        res.render('bookView', {
-            title: books[id].Title,
-            nav: [{
-                Link: '/Books',
-                Text: 'Books'
-            }, {
-                Link: '/Authors',
-                Text: 'Authors'
-            }],
-            book: books[id]
+    bookRouter.route('/')
+        .get(function (req, res) {
+            res.render('bookList', {
+                title: 'Books',
+                nav,
+                books
+            });
         });
-    });
 
-export default bookRouter;
+    bookRouter.route('/:id')
+        .get(function (req, res) {
+            var id = req.params.id;
+            res.render('bookView', {
+                title: books[id].Title,
+                nav,
+                book: books[id]
+            });
+        });
+
+    return bookRouter;
+}
+
+export default router;
